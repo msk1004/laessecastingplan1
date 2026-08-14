@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>LAÉSSE様 グラススキンシリーズ マス向け認知拡大施策 ご提案書</title>
+<style>
+  :root{
+    --navy:#1c2a4a;
+    --navy-light:#2c3f6b;
+    --gold:#b8925a;
+    --gold-light:#f4ead9;
+    --bg:#f7f6f3;
+    --line:#e3ded4;
+    --text:#2c2a26;
+    --sub:#6b6558;
+    --danger:#c0392b;
+    --warn:#b8860b;
+    --safe:#2e7d5b;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+  }
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px 60px;}
+  header.hero{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);
+    color:#fff;
+    padding:40px 24px 30px;
+    text-align:center;
+  }
+  header.hero .tag{
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:.15em;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:20px;
+    padding:5px 16px;
+    margin-bottom:14px;
+  }
+  header.hero h1{font-size:23px;margin:0 0 8px;font-weight:700;}
+  header.hero p.sub{margin:0;font-size:13.5px;color:#d7dcea;}
+  header.hero .meta{
+    margin-top:16px;font-size:12px;color:#c3caDD;
+    display:flex;justify-content:center;gap:20px;flex-wrap:wrap;
+  }
+  section{margin-top:34px;}
+  h2.sec-title{
+    font-size:18px;color:var(--navy);
+    border-left:5px solid var(--gold);
+    padding-left:14px;margin:0 0 16px;
+  }
+  h2.sec-title .num{color:var(--gold);font-size:12px;letter-spacing:.1em;display:block;margin-bottom:2px;}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:10px;
+    padding:22px 24px;box-shadow:0 2px 10px rgba(28,42,74,.04);
+    margin-bottom:16px;
+  }
+  ul.plain{margin:0;padding-left:1.15em;font-size:14px;}
+  ul.plain li{margin-bottom:7px;}
+  .quote{
+    background:var(--gold-light);border-left:4px solid var(--gold);
+    padding:14px 18px;font-size:14px;border-radius:4px;color:#4a3c22;margin-bottom:14px;
+  }
+  .quote b{color:var(--navy);}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;}
+  table th,table td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  table th{background:var(--navy);color:#fff;font-weight:600;font-size:12.5px;}
+  table tr:nth-child(even) td{background:#faf9f6;}
+  .badge{display:inline-block;font-size:11px;padding:2px 9px;border-radius:12px;color:#fff;font-weight:600;white-space:nowrap;}
+  .badge.b{background:var(--navy);}
+  .badge.safe{background:var(--safe);}
+  .badge.warn{background:var(--warn);}
+  .stat-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px;}
+  .stat{flex:1 1 130px;background:var(--navy);color:#fff;border-radius:8px;padding:12px;text-align:center;}
+  .stat .num{font-size:19px;font-weight:700;color:var(--gold);}
+  .stat .lbl{font-size:10.5px;margin-top:3px;color:#cfd5e6;}
+  .note{font-size:12px;color:var(--sub);margin-top:8px;}
+  .footer-note{
+    margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
+    font-size:11.5px;color:var(--sub);text-align:center;
+  }
+
+  /* キャスティング候補カード */
+  .cast-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  @media(max-width:760px){.cast-grid{grid-template-columns:1fr;}}
+  .cast-card{
+    background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;
+    box-shadow:0 2px 10px rgba(28,42,74,.04);
+  }
+  .cast-card.pick{border:2px solid var(--gold);}
+  .cast-head{display:flex;gap:12px;padding:14px 14px 10px;align-items:center;background:#faf9f6;border-bottom:1px solid var(--line);}
+  .cast-photo{
+    width:64px;height:64px;border-radius:10px;object-fit:cover;flex:0 0 auto;
+    background:var(--line);border:1px solid var(--line);
+  }
+  .cast-name{font-size:15px;font-weight:700;color:var(--navy);}
+  .cast-sub{font-size:11px;color:var(--sub);margin-top:2px;}
+  .cast-body{padding:12px 14px;font-size:12.6px;}
+  .cast-body p{margin:0 0 8px;}
+  .cast-cost{
+    margin-top:8px;background:var(--gold-light);border-radius:6px;padding:7px 10px;font-size:12px;
+  }
+  .cast-cost b{color:var(--navy);}
+  .src{font-size:10px;color:var(--sub);margin-top:8px;}
+  .src a{color:var(--sub);}
+
+  .ip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  @media(max-width:760px){.ip-grid{grid-template-columns:1fr;}}
+  .ip-card{background:#faf9f6;border:1px solid var(--line);border-radius:10px;padding:16px;font-size:12.5px;}
+  .ip-card b.title{display:block;color:var(--navy);font-size:14px;margin-bottom:4px;}
+
+  .case-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:760px){.case-grid{grid-template-columns:1fr;}}
+  .case-card{background:#faf9f6;border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-size:12.6px;}
+  .case-card b.brand{color:var(--navy);font-size:13.5px;display:block;margin-bottom:4px;}
+  .case-card dl{margin:8px 0 0;}
+  .case-card dt{font-weight:700;color:var(--gold);font-size:11px;margin-top:6px;}
+  .case-card dt:first-child{margin-top:0;}
+  .case-card dd{margin:2px 0 0;}
+
+  .idea-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:12px;box-shadow:0 2px 10px rgba(28,42,74,.04);}
+  .idea-card .idea-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+  .idea-card .idea-goal{display:inline-block;font-size:11px;background:var(--navy);color:#fff;border-radius:10px;padding:2px 10px;margin-bottom:8px;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="tag">ご提案書 ｜ Vol.1</span>
+  <h1>LAÉSSE様 グラススキンシリーズ<br>マス向け認知拡大施策 ご提案</h1>
+  <p class="sub">芸能人キャスティング × キャラクターIP × 大型OOH／キャンペーン</p>
+  <div class="meta">
+    <span>2026年8月13日</span>
+    <span>株式会社新東通信</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section style="margin-top:24px;">
+    <h2 class="sec-title"><span class="num">00</span>ご提案の目的</h2>
+    <div class="card">
+      <p style="font-size:13.5px;margin:0 0 10px;">フラッグシップ「<b>glass skin clear serum</b>」（グラススキンシリーズ）を軸に、以下3つの目的を実現するための施策案をまとめました。</p>
+      <div class="stat-row">
+        <div class="stat"><div class="num">①</div><div class="lbl">代理店（サロン）活性化</div></div>
+        <div class="stat"><div class="num">②</div><div class="lbl">消費者認知向上</div></div>
+        <div class="stat"><div class="num">③</div><div class="lbl">ブランド実績構築</div></div>
+      </div>
+      <p class="note" style="margin-top:14px;">※出演料・ライセンス費用等は業界レンジからの推定値です。正式なご検討にあたっては、各事務所・ライセンス元への直接確認・見積り取得が必要です。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec-title"><span class="num">01</span>キャスティング候補｜男性</h2>
+    <div class="cast-grid">
+
+      <div class="cast-card pick">
+        <div class="cast-head">
+          <img class="cast-photo" src="https://contents.oricon.co.jp/upimg/news/2445000/2444105/20260324_182757_p_s_10235576.jpg" alt="赤西仁">
+          <div>
+            <div class="cast-name">赤西仁</div>
+            <div class="cast-sub">41歳／独立アーティスト</div>
+          </div>
+        </div>
+        <div class="cast-body">
+          <p>ラグジュアリー・洗練されたイメージで、サロン経営者層・一般消費者層の双方に訴求力。個人事務所のため契約条件の柔軟性も期待できます。</p>
+          <p><span class="badge warn">要確認</span> コーセー「Stephen Knoll」のヘアケアCMに現行出演中のため、起用可否は契約範囲の確認が必要です。</p>
+          <div class="cast-cost"><b>推定年間費用：</b>2,000万〜1.5億円（起用範囲により変動）</div>
+        </div>
+      </div>
+
+      <div class="cast-card">
+        <div class="cast-head">
+          <img class="cast-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Kamiki_Ryunosuke_from_%22Godzilla_Minus_One%22_at_Red_Carpet_of_the_Tokyo_International_Film_Festival_2023_%2853348227359%29_%28cropped%29.jpg/330px-Kamiki_Ryunosuke_from_%22Godzilla_Minus_One%22_at_Red_Carpet_of_the_Tokyo_International_Film_Festival_2023_%2853348227359%29_%28cropped%29.jpg" alt="神木隆之介">
+          <div>
+            <div class="cast-name">神木隆之介</div>
+            <div class="cast-sub">33歳／Co-LaVo</div>
+          </div>
+        </div>
+        <div class="cast-body">
+          <p>幅広い年代からの信頼感・好感度が高く、現行の美容ブランド契約は確認されていません。技術力・信頼性を訴求するブランドイメージとの相性が良好です。</p>
+          <div class="cast-cost"><b>推定年間費用：</b>2,000万〜1.2億円</div>
+        </div>
+      </div>
+
+      <div class="cast-card">
+        <div class="cast-head">
+          <img class="cast-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Maeda_Gordon_from_%22Lightning_Over_the_Beyond%22_at_Red_Carpet_of_the_Tokyo_International_Film_Festival_2022_%2852461337594%29.jpg/250px-Maeda_Gordon_from_%22Lightning_Over_the_Beyond%22_at_Red_Carpet_of_the_Tokyo_International_Film_Festival_2022_%2852461337594%29.jpg" alt="眞栄田郷敦">
+          <div>
+            <div class="cast-name">眞栄田郷敦</div>
+            <div class="cast-sub">26歳／ユニバーサル ミュージック アーティスツ</div>
+          </div>
+        </div>
+        <div class="cast-body">
+          <p>国際的な活動歴と端正なルックスで20〜30代への訴求力が強く、美容ブランド起用自体が少ないため「初起用」の話題性を作りやすい候補です。</p>
+          <div class="cast-cost"><b>推定年間費用：</b>1,500万〜8,000万円</div>
+        </div>
+      </div>
+
+      <div class="cast-card">
+        <div class="cast-head">
+          <img class="cast-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Ran_Takahashi_%28Legavolley_2021%29_%28cropped%29.jpg/250px-Ran_Takahashi_%28Legavolley_2021%29_%28cropped%29.jpg" alt="髙橋藍">
+          <div>
+            <div class="cast-name">髙橋藍</div>
+            <div class="cast-sub">24歳／バレーボール男子日本代表</div>
+          </div>
+        </div>
+        <div class="cast-body">
+          <p>爽やかで誠実なイメージで男女問わず好感度が高いアスリート枠の候補です。</p>
+          <p><span class="badge warn">要確認</span> コーセー「雪肌精」のアンバサダーとして現行契約中のため、起用可否の確認が必要です。</p>
+          <div class="cast-cost"><b>推定年間費用：</b>2,000万〜5,000万円</div>
+        </div>
+      </div>
+
+      <div class="cast-card pick">
+        <div class="cast-head">
+          <img class="cast-photo" src="https://contents.oricon.co.jp/upimg/talent/M/M11-1284.jpg" alt="山﨑賢人">
+          <div>
+            <div class="cast-name">山﨑賢人</div>
+            <div class="cast-sub">31歳／スターダストプロモーション</div>
+          </div>
+        </div>
+        <div class="cast-body">
+          <p>「キングダム」「今際の国のアリス」等の主演で、女性ファンの購買行動への影響力が国内男性俳優でトップクラス。売上への波及効果を重視した起用ができます。</p>
+          <p><span class="badge warn">要確認</span> 「Saint Laurent」アンバサダーとして契約中のため、ビューティー領域への抵触可否の確認が必要です。</p>
+          <div class="cast-cost"><b>推定年間費用：</b>8,000万〜1.5億円</div>
+        </div>
+      </div>
+
+      <div class="cast-card pick">
+        <div class="cast-head">
+          <img class="cast-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Hikaru_Iwamoto_Snow_Man.jpg/250px-Hikaru_Iwamoto_Snow_Man.jpg" alt="岩本照">
+          <div>
+            <div class="cast-name">岩本照</div>
+            <div class="cast-sub">33歳／Snow Man</div>
+          </div>
+        </div>
+        <div class="cast-body">
+          <p>グループとしての動員力・関連商品売上が国内トップクラスで、ファン経由の話題化・購買転換力が強い候補です。</p>
+          <p><span class="badge warn">要確認</span> 「ドルチェ&ガッバーナ」アンバサダーとして契約中のため、ビューティー領域への抵触可否の確認が必要です。</p>
+          <div class="cast-cost"><b>推定年間費用：</b>5,000万〜1億円</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec-title"><span class="num">02</span>キャスティング候補｜女性</h2>
+    <div class="cast-grid">
+
+      <div class="cast-card">
+        <div class="cast-head">
+          <img class="cast-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Haruna_Kawaguchi_20230623.jpg/250px-Haruna_Kawaguchi_20230623.jpg" alt="川口春奈">
+          <div>
+            <div class="cast-name">川口春奈</div>
+            <div class="cast-sub">32歳／研音</div>
+          </div>
+        </div>
+        <div class="cast-body">
+          <p>CM起用社数で業界トップクラスの「CM女王」。清潔感と親しみやすさで幅広い年代の女性から支持されています。</p>
+          <p><span class="badge warn">要確認</span> 化粧品ブランド「＆be」のブランドミューズとして現行契約中のため、起用は難しい可能性があります。</p>
+          <div class="cast-cost"><b>推定年間費用：</b>8,000万〜1.5億円</div>
+        </div>
+      </div>
+
+      <div class="cast-card">
+        <div class="cast-head">
+          <img class="cast-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/%E6%96%B0%E6%9C%A8%E5%84%AA%E5%AD%90.png/250px-%E6%96%B0%E6%9C%A8%E5%84%AA%E5%AD%90.png" alt="新木優子">
+          <div>
+            <div class="cast-name">新木優子</div>
+            <div class="cast-sub">32歳／スターダストプロモーション</div>
+          </div>
+        </div>
+        <div class="cast-body">
+          <p>都会的で上品なラグジュアリー感が持ち味で、高級感・再生美容という訴求との親和性が非常に高い候補です。</p>
+          <p><span class="badge warn">要確認</span> ディオールのビューティー領域を含むアンバサダーとして現行契約中のため、起用は難しい可能性があります。</p>
+          <div class="cast-cost"><b>推定年間費用：</b>6,000万〜1.2億円</div>
+        </div>
+      </div>
+
+      <div class="cast-card">
+        <div class="cast-head">
+          <img class="cast-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Tao_Tsuchiya_IMG_0919-30_20181111.jpg/250px-Tao_Tsuchiya_IMG_0919-30_20181111.jpg" alt="土屋太鳳">
+          <div>
+            <div class="cast-name">土屋太鳳</div>
+            <div class="cast-sub">30歳／Sony Music Artists</div>
+          </div>
+        </div>
+        <div class="cast-body">
+          <p>清潔感・誠実さ・親近感で幅広い層に支持され、サロン経営者層への「技術力・信頼性」訴求に合致します。</p>
+          <p><span class="badge warn">要確認</span> 過去に「SENKA」新ミューズを務めた実績があり、現行の契約状況の確認が必要です。</p>
+          <div class="cast-cost"><b>推定年間費用：</b>4,000万〜8,000万円</div>
+        </div>
+      </div>
+
+      <div class="cast-card pick">
+        <div class="cast-head">
+          <img class="cast-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Yamada_Yu_in_May_2025.png/250px-Yamada_Yu_in_May_2025.png" alt="山田優">
+          <div>
+            <div class="cast-name">山田優</div>
+            <div class="cast-sub">41歳／個人事務所</div>
+          </div>
+        </div>
+        <div class="cast-body">
+          <p>40代・大人の女性というポジションはサロン経営者層の主要顧客層と重なり、再生美容の高機能訴求に説得力を持たせやすい候補です。現行の美容ブランド契約は確認されていません。</p>
+          <div class="cast-cost"><b>推定年間費用：</b>3,000万〜6,000万円</div>
+        </div>
+      </div>
+
+      <div class="cast-card">
+        <div class="cast-head">
+          <img class="cast-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Rikako_Ikee_20230408a.jpg/330px-Rikako_Ikee_20230408a.jpg" alt="池江璃花子">
+          <div>
+            <div class="cast-name">池江璃花子</div>
+            <div class="cast-sub">25歳／競泳選手</div>
+          </div>
+        </div>
+        <div class="cast-body">
+          <p>病気からの復帰・五輪出場という「再生・克服」のストーリーが再生美容というブランドコンセプトと重なる候補です。現行の美容ブランド契約は確認されていません。</p>
+          <div class="cast-cost"><b>推定年間費用：</b>1,500万〜4,000万円</div>
+        </div>
+      </div>
+
+      <div class="cast-card">
+        <div class="cast-head">
+          <img class="cast-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Nana_Mori_at_the_Burn_Premier_at_Sundance_Film_Festival_%28cropped%29.jpg/250px-Nana_Mori_at_the_Burn_Premier_at_Sundance_Film_Festival_%28cropped%29.jpg" alt="森七菜">
+          <div>
+            <div class="cast-name">森七菜</div>
+            <div class="cast-sub">24歳／Sony Music Artists</div>
+          </div>
+        </div>
+        <div class="cast-body">
+          <p>ナチュラルで親しみやすいイメージで、20〜30代女性への訴求力が強い候補です。</p>
+          <p><span class="badge warn">要確認</span> 過去に花王「プリマヴィスタ」ミューズを務めた実績があり、現行の契約状況の確認が必要です。</p>
+          <div class="cast-cost"><b>推定年間費用：</b>2,000万〜5,000万円</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec-title"><span class="num">03</span>キャラクターIP候補｜リスク回避型オプション</h2>
+    <div class="card">
+      <p style="font-size:13.5px;margin-top:0;">芸能人起用にはレピュテーションリスクが伴うため、それを回避できる代替・併用案としてキャラクターIPのライセンス起用もご提案します。</p>
+      <div class="ip-grid">
+        <div class="ip-card" style="border:2px solid var(--gold);">
+          <b class="title">スヌーピー（PEANUTS）</b>
+          Cosme Kitchen等、美容業界とのコラボ実績多数。世界的知名度で全世代・性別を問わず訴求可能です。
+          <div class="cast-cost" style="margin-top:8px;"><b>推定費用：</b>年間数百万〜数千万円（活用範囲により変動）</div>
+        </div>
+        <div class="ip-card">
+          <b class="title">ミッフィー（miffy）</b>
+          Cosme Kitchenと複数回コラボ実績あり。ナチュラル・オーガニック志向の女性層との親和性が高い候補です。
+          <div class="cast-cost" style="margin-top:8px;"><b>推定費用：</b>年間数百万〜1,000万円台</div>
+        </div>
+        <div class="ip-card">
+          <b class="title">リラックマ（san-x）</b>
+          メイクアップ領域でのコラボ実績が豊富で、10〜40代女性への浸透度が高い候補です。
+          <div class="cast-cost" style="margin-top:8px;"><b>推定費用：</b>年間数百万〜2,000万円</div>
+        </div>
+      </div>
+      <p class="note" style="margin-top:12px;">キャラクターIPはスキャンダル等のリスクがなく、契約終了時も自然に収束できる点が最大のメリットです。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec-title"><span class="num">04</span>同業界キャスティング実績ケーススタディ</h2>
+    <div class="case-grid">
+      <div class="case-card">
+        <b class="brand">SPICARE × 新田真剣佑</b>
+        <dl>
+          <dt>施策</dt><dd>一流ホテル撮影のCM「BEAUTY INSPIRATION」篇＋OOHを福岡空港→大阪→渋谷の順で段階展開</dd>
+          <dt>効果推測</dt><dd>地方→大都市の段階展開でブランド認知度が大幅に向上したと推定</dd>
+          <dt>実施費用試算</dt><dd>CM制作＋OOH3拠点で3,000万〜6,000万円（タレント費別）</dd>
+        </dl>
+      </div>
+      <div class="case-card">
+        <b class="brand">soaddicted／SPICARE Men's × 三浦翔平</b>
+        <dl>
+          <dt>施策</dt><dd>約2年間の継続アンバサダー起用。複数ブランド・複数年でストーリーを蓄積</dd>
+          <dt>効果推測</dt><dd>継続起用によりブランド指名検索数が持続的に増加したと推定</dd>
+          <dt>実施費用試算</dt><dd>年間起用費用込みで5,000万〜1億円／年</dd>
+        </dl>
+      </div>
+      <div class="case-card">
+        <b class="brand">SHIKARI × 菊池風磨</b>
+        <dl>
+          <dt>施策</dt><dd>男女ペア起用のCM「然るべき明日のために。」篇を関東・関西エリアで放送</dd>
+          <dt>効果推測</dt><dd>男女ダブルターゲティングでSNS言及数が拡大したと推定</dd>
+          <dt>実施費用試算</dt><dd>CM制作＋放送で4,000万〜8,000万円（タレント費別）</dd>
+        </dl>
+      </div>
+      <div class="case-card">
+        <b class="brand">エニシー × 中川大志</b>
+        <dl>
+          <dt>施策</dt><dd>化粧品CM初出演というニュース性を活かし、家族ストーリー仕立てのCMを展開</dd>
+          <dt>効果推測</dt><dd>サロン専売ブランドの一般消費者認知が向上したと推定</dd>
+          <dt>実施費用試算</dt><dd>CM制作＋放送で3,000万〜6,000万円（タレント費別）</dd>
+        </dl>
+      </div>
+      <div class="case-card">
+        <b class="brand">R-FACE BFTパック × 浜崎あゆみ</b>
+        <dl>
+          <dt>施策</dt><dd>約8年ぶりの記者会見登場という稀少性を話題化材料に、新製品を発表</dd>
+          <dt>効果推測</dt><dd>ニュース性によりメディア無料露出（PR価値）が広告費換算で1億円規模に達したと推定</dd>
+          <dt>実施費用試算</dt><dd>発表会・PR費用で2,000万〜4,000万円（タレント費別）</dd>
+        </dl>
+      </div>
+      <div class="case-card">
+        <b class="brand">スパトリートメント × 松島花</b>
+        <dl>
+          <dt>施策</dt><dd>7年連続でイメージモデルに起用し、年ごとにコンセプト・製品を刷新</dd>
+          <dt>効果推測</dt><dd>「ブランドの顔」の定着によりリピート購買率が向上したと推定</dd>
+          <dt>実施費用試算</dt><dd>年間契約で3,000万〜5,000万円／年</dd>
+        </dl>
+      </div>
+      <div class="case-card">
+        <b class="brand">iCell × 氷川きよし</b>
+        <dl>
+          <dt>施策</dt><dd>高濃度エクソソーム配合の技術訴求とブランドフィルムを連動</dd>
+          <dt>効果推測</dt><dd>技術訴求と話題性人物の組み合わせでSNS拡散が促進されたと推定</dd>
+          <dt>実施費用試算</dt><dd>3,000万〜6,000万円（タレント費含む）</dd>
+        </dl>
+      </div>
+      <div class="case-card">
+        <b class="brand">hada to kokoro × JO1・河野純喜</b>
+        <dl>
+          <dt>施策</dt><dd>渋谷駅周辺3拠点を1週間ジャックし、POPUPストア・SNSキャンペーンと連動</dd>
+          <dt>効果推測</dt><dd>OOHインプレッション数百万〜1,000万規模、UGC投稿による二次拡散を推定</dd>
+          <dt>実施費用試算</dt><dd>OOH3拠点＋POPUPで2,000万〜4,000万円（タレント費別）</dd>
+        </dl>
+      </div>
+      <div class="case-card">
+        <b class="brand">ドクターシーラボ「VC100」× 穂志もえか</b>
+        <dl>
+          <dt>施策</dt><dd>累計販売本数1,200万本超の実績訴求とリニューアルCMを連動</dd>
+          <dt>効果推測</dt><dd>販売実績数値の提示により購入検討率が向上したと推定</dd>
+          <dt>実施費用試算</dt><dd>2,500万〜5,000万円（タレント費別）</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec-title"><span class="num">05</span>OOH・キャンペーン施策比較（コストパフォーマンス順）</h2>
+    <div class="card">
+      <table>
+        <tr><th>施策</th><th>概要</th><th>費用感（タレント費別）</th><th>コストパフォーマンス</th></tr>
+        <tr>
+          <td>渋谷駅3拠点ジャック＋POPUP連動</td>
+          <td>渋谷駅東口地下・大型ビジョン等3拠点を1週間、体験型POPUPとSNS投稿施策を同時実施</td>
+          <td>2,000万〜4,000万円</td>
+          <td><span class="badge safe">◎ 高</span></td>
+        </tr>
+        <tr>
+          <td>稀少性ニュースフック型発表会</td>
+          <td>話題性のある起用を記者発表会で公開し、メディア無料露出を最大化</td>
+          <td>2,000万〜4,000万円</td>
+          <td><span class="badge safe">◎ 高</span></td>
+        </tr>
+        <tr>
+          <td>地方→大都市の段階展開</td>
+          <td>地方拠点から都心主要駅へ段階的にOOHを拡大し、投資規模を段階的に引き上げ</td>
+          <td>3,000万〜6,000万円</td>
+          <td><span class="badge b">○ 中</span></td>
+        </tr>
+        <tr>
+          <td>渋谷スクランブルスクエア大型ビジョン単体</td>
+          <td>単独の大型ビジョン出稿。露出量は最大だが面料単価が高い</td>
+          <td>5,000万円〜</td>
+          <td><span class="badge warn">△ 中〜低</span></td>
+        </tr>
+      </table>
+      <p class="note">※費用感は公開情報から確認できた範囲での試算です。個別の見積りは媒体社への直接確認が必要です。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec-title"><span class="num">06</span>LAÉSSE様向け オリジナル施策案（3案）</h2>
+    <div class="idea-card">
+      <div class="idea-goal">目的①代理店活性化</div>
+      <div class="idea-title">案1｜代理店限定シークレットパーティー × キャスティング交流会</div>
+      <p style="font-size:13px;margin:0 0 8px;">売上上位の導入サロンを対象に、事前告知で期待感を高めた上で限定パーティーを開催。起用タレントとの交流タイム（フォトセッション・トーク等）を設け、サロン側の当日限定の特別感を演出します。</p>
+      <p class="note" style="margin:0;">想定効果：導入サロンのロイヤルティ向上、サロン自身によるSNS発信での二次拡散／費用感：1,500万〜3,000万円（タレント出演費含む）</p>
+    </div>
+    <div class="idea-card">
+      <div class="idea-goal">目的②消費者認知向上</div>
+      <div class="idea-title">案2｜OOH×POPUP体験キャンペーン</div>
+      <p style="font-size:13px;margin:0 0 8px;">主要エリアでのOOH展開と同時に、期間限定POPUPストアでのタッチ&トライ体験を実施。SNS投稿キャンペーンと連動させ、来店者による自然な拡散を促します。</p>
+      <p class="note" style="margin:0;">想定効果：インプレッション数百万〜1,000万規模、UGC投稿による二次拡散／費用感：2,000万〜4,000万円（タレント費別）</p>
+    </div>
+    <div class="idea-card">
+      <div class="idea-goal">目的②消費者認知向上 ／ ③ブランド実績構築</div>
+      <div class="idea-title">案3｜「初起用」ニュースフック型メディア発表会</div>
+      <p style="font-size:13px;margin:0 0 8px;">話題性のある人物の「美容ブランド初起用」という切り口で記者発表会を実施し、メディア露出を最大化。その後CM・OOHへ展開することで広告費以上のPR価値を狙います。</p>
+      <p class="note" style="margin:0;">想定効果：メディア無料露出によるリーチ拡大、広告費換算での高いPR価値／費用感：2,000万〜3,500万円（タレント費別）</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec-title"><span class="num">07</span>次のステップ</h2>
+    <div class="card">
+      <p style="font-size:13.5px;margin:0 0 10px;">本提案をベースに、以下の点についてすり合わせをお願いできればと存じます。</p>
+      <ul class="plain">
+        <li>目的①〜③の優先度（代理店活性化／消費者認知／ブランド実績のどこに重点を置くか）</li>
+        <li>ターゲット優先度（サロン経営者層 vs 一般消費者層）</li>
+        <li>予算レンジ（キャスティング・OOH・キャンペーン全体でのご想定）</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="footer-note">
+    株式会社新東通信　東京本社 エステテック通信チーム
+  </div>
+
+</div>
+</body>
+</html>
