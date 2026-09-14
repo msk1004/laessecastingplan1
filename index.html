@@ -149,6 +149,23 @@
   .ref-figure img{width:100%;display:block;}
   .ref-figure .src{margin:0;padding:5px 8px;background:var(--panel);}
   @media(max-width:600px){.ref-figure{float:none;width:100%;margin:0 0 14px;}}
+
+  .case-img{cursor:zoom-in;}
+  .lightbox{
+    display:none;position:fixed;inset:0;background:rgba(28,24,18,.86);
+    z-index:1000;align-items:center;justify-content:center;padding:28px;
+    cursor:zoom-out;
+  }
+  .lightbox.is-open{display:flex;}
+  .lightbox img{max-width:100%;max-height:100%;border-radius:4px;box-shadow:0 10px 40px rgba(0,0,0,.4);}
+  .lightbox .lightbox-close{
+    position:absolute;top:18px;right:24px;color:#fff;font-size:28px;line-height:1;
+    font-family:Arial,sans-serif;opacity:.85;cursor:pointer;
+  }
+  .lightbox .lightbox-caption{
+    position:absolute;bottom:18px;left:0;right:0;text-align:center;
+    color:#ddd6c8;font-size:12px;letter-spacing:.03em;
+  }
 </style>
 </head>
 <body>
@@ -589,5 +606,40 @@
   </div>
 
 </div>
+
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+  <p class="lightbox-caption" id="lightbox-caption"></p>
+</div>
+
+<script>
+(function(){
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  var lbCaption = document.getElementById('lightbox-caption');
+
+  function openLightbox(img){
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    var credit = img.closest('.case-card');
+    var creditText = credit ? credit.querySelector('.case-img-credit') : null;
+    lbCaption.textContent = (img.alt || '') + (creditText ? '　｜　' + creditText.textContent : '');
+    lb.classList.add('is-open');
+  }
+  function closeLightbox(){
+    lb.classList.remove('is-open');
+    lbImg.src = '';
+  }
+
+  document.querySelectorAll('.case-img').forEach(function(img){
+    img.addEventListener('click', function(){ openLightbox(img); });
+  });
+  lb.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeLightbox();
+  });
+})();
+</script>
 </body>
 </html>
